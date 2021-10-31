@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main()
+{
+  int b[5];
+  int n=5;
+  for(int i=0;i<n;i++)
+  {
+    scanf("%d",&b[i]);
+  }
+  int max=b[0];
+  int f;
+  for(int i=0;i<n;i++)
+  {
+      if(max<b[i])
+      {
+          max=b[i];
+          f=i;
+      }
+  }
+  int count=0,a;
+  int p=0;
+ 
+  for(int j=f+1;j<n;j++)//from max see the building to right 
+  {
+      if(b[f]>=b[j]){
+          count++;//for finding distance between b[f]and b[j]
+          a=j;
+      }
+  }
+   p=count*b[a];//distance btw building and value of height of b[a]
+
+  printf("%d",p);
+}
