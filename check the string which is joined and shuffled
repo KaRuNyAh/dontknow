@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+   char s[50];
+   gets(s);
+   
+   char s1[50];
+   gets(s1);
+   
+   char org[50];
+   gets(org);
+   
+   int n = strlen(s);
+   int n1 = strlen(s1);
+   int n2 = strlen(org);
+   
+   int t=0;
+   int t1=0;
+   
+   if(n2 == n+n1){
+       for(int i=0; i<n; i++){
+           for(int j=0; j<n2; j++){
+               if(s[i] == org[j]){
+                   t=1;
+                   break;
+               }
+           }
+           if(t==0){
+               printf("not");
+               t1=1;
+               break;
+           }
+           else{
+               t=0;
+           }
+       }
+       
+       if(t1==0){
+           for(int i=0; i<n1; i++){
+            for(int j=0; j<n2; j++){
+               if(s1[i] == org[j]){
+                   t=1;
+                   break;
+               }
+           }
+           if(t==0){
+               printf("not");
+               t1 = 1;
+               break;
+           }
+           else{
+               t=0;
+           }
+       }
+       }
+       
+       if(t1==0){
+           printf("yes its ")
+       }
+       
+       
+   }
+   else{
+       printf("not")
+   }
+   
+
+    return 0;
+}
